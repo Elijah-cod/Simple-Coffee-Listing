@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    height: 200px;
+    width: 100%;
+    position: relative;
+}
+
+header img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.collection {
+    width: 75%;
+    background-color: #007bff; /* Blue for visibility */
+    position: absolute; /* To position it inside the header */
+    top: 100px; /* Push it slightly inside the header */
+    height: 800px;
+    left: 10%;
+}
