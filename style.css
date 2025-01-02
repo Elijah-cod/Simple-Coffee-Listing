@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Nunito", serif;
 }
 
 header {
@@ -18,9 +19,61 @@ header img {
 
 .collection {
     width: 75%;
-    background-color: #007bff; /* Blue for visibility */
+    background-color: black; /* Blue for visibility */
     position: absolute; /* To position it inside the header */
     top: 100px; /* Push it slightly inside the header */
-    height: 800px;
     left: 10%;
+    color: white;
+    text-align: center;
+}
+
+.collection h1{
+    padding-top: 100px;
+}
+
+.collection p {
+    padding: 10px 60px;
+}
+
+.collection button {
+    border-radius: 10px;
+    width: 200px;
+    padding: 20px;
+    color: white;
+    /* background-color: black; */
+    background-color: grey;
+    border: none;
+    cursor: pointer;
+}
+
+.products {
+    margin-right: 20px;
+}
+
+.selected {
+    background-color: grey;
+}
+
+.collection .cards {
+    padding: 50px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.cards .card {
+    color: white;
+}
+
+.card-body .titles{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.titles .price {
+    background-color: #008f7a;
+    padding: 10px;
+    border-radius: 5px;
 }
