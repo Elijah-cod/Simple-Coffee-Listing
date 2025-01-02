@@ -35,14 +35,12 @@ async function captureData () {
 //Function to create the cards
 function creatingCards (element){
     //Creating the card element
-    const card = document.createElement('div')
-    card.classList.add('card')
+    const card = creatingElements('div', 'card')
     card.style = "width: 18rem; background-color: black;"
 
     //Check if element is popular
     if (element.popular){
-        const popular = document.createElement('div')
-        popular.classList.add('popular')
+        const popular = creatingElements('div', 'popular')
         popular.innerText = "Popular"
         card.append(popular)
     } 
@@ -54,43 +52,66 @@ function creatingCards (element){
     card.append(image)
 
     //Creating the card body and adding it to the card
-    const cardBody = document.createElement('div')
-    cardBody.classList.add('card-body')
+    const cardBody = creatingElements('div', 'card-body')
 
     //Creating the title and price
-    const titles = document.createElement('div')
-    titles.classList.add('titles')
+    const titles = creatingElements('div', 'titles')
 
-    const cardTitle = document.createElement('h4')
-    cardTitle.classList.add('card-title')
+    const cardTitle = creatingElements('h4', 'card-title')
     cardTitle.innerText = element.name
     titles.append(cardTitle)
 
-    const price = document.createElement('div')
-    price.classList.add('price')
+    const price = creatingElements('div', 'price')
     price.innerText = element.price
     titles.append(price)
 
     card.append(titles)
 
     if (element.rating == null) {
-        const ratings =  document.createElement('div')
-        ratings.classList.add('ratings')
+        const ratings =  creatingElements('div', 'ratings')
         //Adding the no rating font awesome icons to the DOM
-        const i = document.createElement('i')
-        i.classList.add("fa","fa-star-o")
-        i.setAttribute('aria-hidden', 'true')
+        const i = creatingIcons("fa-star-o")
         ratings.append(i)
-        const p = document.createElement('p')
-        p.classList.add('card-text')
+        const p = creatingElements('p', 'card-text')
         p.innerText = "No ratings"
         ratings.append(p)
         cardBody.append(ratings)
+    } else {
+        const bottom =  creatingElements('div', 'bottom')
+    
+        const left = creatingElements("div", "left")
+        const i = creatingIcons("fa-star")
+        left.append(i)
+        const p = creatingElements("p", 'card-text')
+        p.innerText = `${element.rating}(${element.votes} votes)`
+        left.append(p)
+        bottom.append(left)
+
+        if (!element.available){
+            const p1 = creatingElements('p', 'sold')
+            p1.innerText = "Sold out"
+            bottom.append(p1)
+        }
+        cardBody.append(bottom)
     }
 
     card.append(cardBody)
     cards.append(card)
 }
 
+//Function to help create HTML elements to avoid repetition
+function creatingElements (elem, className) {
+    const element = document.createElement(elem)
+    element.classList.add(className)
+    return element
+}
+
+//Function to create Font awesome icons to avoid repetition
+function creatingIcons (iconName) {
+    const i = document.createElement('i')
+    i.classList.add("fa",iconName)
+    i.setAttribute('aria-hidden', 'true')
+    return i
+}
 
 captureData()

@@ -33,6 +33,7 @@ header img {
 
 .collection p {
     padding: 10px 60px;
+    font-size: 20px;
 }
 
 .collection button {
@@ -45,13 +46,12 @@ header img {
     cursor: pointer;
 }
 
-.products {
+.btns .products {
     margin-right: 20px;
+    background-color: gray;
 }
 
-.selected {
-    background-color: grey;
-}
+
 
 .collection .cards {
     padding: 50px;
@@ -75,8 +75,8 @@ header img {
     border-radius: 15px;
 }
 
-.card-body .titles{
-    display: flex;
+.cards .card .card-body .titles{
+    display: flex; 
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
