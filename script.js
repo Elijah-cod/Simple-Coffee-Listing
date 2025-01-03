@@ -56,6 +56,7 @@ function creatingCards (element){
 
     //Creating the title and price
     const titles = creatingElements('div', 'titles')
+    titles.style = "display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; margin-top: 10px;"
 
     const cardTitle = creatingElements('h4', 'card-title')
     cardTitle.innerText = element.name
@@ -81,9 +82,11 @@ function creatingCards (element){
     
         const left = creatingElements("div", "left")
         const i = creatingIcons("fa-star")
+        i.style = "color: gold;"
         left.append(i)
         const p = creatingElements("p", 'card-text')
         p.innerText = `${element.rating}(${element.votes} votes)`
+        p.style = "font-size: 16px; padding: 0; margin: 0;"
         left.append(p)
         bottom.append(left)
 
@@ -114,4 +117,6 @@ function creatingIcons (iconName) {
     return i
 }
 
+
+//Running the app 
 captureData()

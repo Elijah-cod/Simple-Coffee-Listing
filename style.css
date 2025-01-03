@@ -75,12 +75,12 @@ header img {
     border-radius: 15px;
 }
 
-.cards .card .card-body .titles{
+/* .cards .card .card-body .titles{
     display: flex; 
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
-}
+} */
 
 .titles .price {
     background-color: #008f7a;
@@ -100,11 +100,11 @@ header img {
     gap: 5px;
 }
 
-.left .card-text{
+/* .left .card-text{
     padding: 0;
     margin: 0;
     width: 100px;
-}
+} */
 .bottom .sold {
     color: red;
     padding: 0;
